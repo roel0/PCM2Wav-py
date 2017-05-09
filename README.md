@@ -7,6 +7,11 @@ obtained with logic analyzers.
 For example I2S signals obtained with the Saleae logic analyzer.
 
 
+Current supported formats
+-------------------------
+
+* I2S signals obtained and exported with the Saleae logic analyzer.
+* I2S signals obtained with Sigrok (Software that supports multiple hardware devices)
 
 Installation
 ------------
