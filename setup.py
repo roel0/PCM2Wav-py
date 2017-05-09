@@ -13,7 +13,7 @@ setup(
     url="https://github.com/roel0/PCM2Wav-py",
     author="Roel Postelmans",
     author_email="postelmansroel@gmail.com",
-    license="MIT",
+    license="GPL-2.0",
     classifiers=[
             "Intended Audience :: Developers",
             "Programming Language :: Python",
