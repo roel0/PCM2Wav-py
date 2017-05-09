@@ -7,16 +7,16 @@
 from __future__ import division, print_function
 import struct
 import wave
-import PCM.logic.saleae
-import PCM.logic.sigrok
-
+from .PCM.PCM import PCM
+from .PCM.logic import saleae as _saleae
+from .PCM.logic import sigrok as _sigrok
 
 class PCM2Wav(object):
     '''
         PCM data to Wav converter
     '''
-    saleae = PCM.logic.saleae
-    sigrok = PCM.logic.sigrok
+    saleae = _saleae
+    sigrok = _sigrok
     analyzers = saleae, sigrok
     sample_freq = 48000
     sample_width = 2
