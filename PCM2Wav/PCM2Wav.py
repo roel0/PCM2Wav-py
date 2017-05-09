@@ -58,5 +58,8 @@ class PCM2Wav(object):
             return chr(arg)
         return arg
 
+    def _sample_2_bin(self, sample):
+        return struct.pack(self.__formats[self.sample_width], self._chr(int(sample)))
+
     def _calc_frame(self, channels_data):
-        return b"".join(b"".join(struct.pack(self.__formats[self.sample_width], self._chr(int(sample)))) for sample in channels_data)
+        return b"".join(self._sample_2_bin(sample) for sample in channels_data)
