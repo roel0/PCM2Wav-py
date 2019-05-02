@@ -56,6 +56,11 @@ class I2S(PCM):
 
         value = self.extract_value(self.line, self.VALUE_LOC)
         channel = self.extract_value(self.line, self.CHANNEL_LOC)
+
+        if self.sample_count <= self.FIRST_D + 1:
+            if int(channel) != 1:
+                return self.pop_data()
+
         return channel, value
 
     def close(self):
