@@ -5,6 +5,7 @@
 '''
 from ..PCM import PCM
 
+
 class I2S(PCM):
     '''
         I2S data parser for sigrok protocol decoders
@@ -48,7 +49,7 @@ class I2S(PCM):
         '''
         if self.sample_rate is None:
             raise ValueError("Sigrok export doesn't contain timestamps,"
-                              "you have to set sigrok.sample_rate")
+                             "you have to set sigrok.sample_rate")
         super(I2S, self).reset()
         return self.sample_rate
 
@@ -56,7 +57,7 @@ class I2S(PCM):
         '''
             Extract the values from one line of data
         '''
-        d_channel = {"Left" : 0, "Right": 1}
+        d_channel = {"Left": 0, "Right": 1}
         if self.line is None:
             super(I2S, self).pop_data()
             value = self.extract_value(self.line, self.VALUE_LOC)[:4]
@@ -76,5 +77,5 @@ class I2S(PCM):
         '''
             Close the export file
         '''
-        self.sample_count -= self.FIRST_D #header
+        self.sample_count -= self.FIRST_D
         super(I2S, self).close()

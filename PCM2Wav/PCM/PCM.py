@@ -6,6 +6,7 @@
 import errno
 import os
 
+
 class PCM(object):
     '''
         PCM data parser (parent class)
@@ -16,7 +17,9 @@ class PCM(object):
         '''
         self.csv = open(csv_file, 'r')
         if not self.csv:
-            raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), csv_file)
+            raise FileNotFoundError(errno.ENOENT,
+                                    os.strerror(errno.ENOENT),
+                                    csv_file)
         nbr = 0
         for nbr, self.line in enumerate(self.csv):
             if nbr == first:

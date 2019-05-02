@@ -5,6 +5,7 @@
 '''
 from ..PCM import PCM
 
+
 class I2S(PCM):
     '''
         I2S data parser for the saleae logic analyzer
@@ -20,8 +21,10 @@ class I2S(PCM):
         '''
         super(I2S, self).__init__(csv_file, self.FIRST_D)
         self.delimiter = delimiter
-        self.start_time = float(self.extract_value(self.start_time, self.TIME_LOC))
-        self.end_time = float(self.extract_value(self.end_time, self.TIME_LOC))
+        self.start_time = float(self.extract_value(self.start_time,
+                                                   self.TIME_LOC))
+        self.end_time = float(self.extract_value(self.end_time,
+                                                 self.TIME_LOC))
 
     def extract_value(self, line, key):
         '''
@@ -59,5 +62,5 @@ class I2S(PCM):
         '''
             Close the export file
         '''
-        self.sample_count -= self.FIRST_D #header
+        self.sample_count -= self.FIRST_D
         super(I2S, self).close()
