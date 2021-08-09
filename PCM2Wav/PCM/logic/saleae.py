@@ -10,9 +10,9 @@ class I2S(PCM):
     '''
         I2S data parser for the saleae logic analyzer
     '''
-    TIME_LOC = 0
-    VALUE_LOC = -1
-    CHANNEL_LOC = -2
+    TIME_LOC = 2
+    VALUE_LOC = 5
+    CHANNEL_LOC = 4
     FIRST_D = 1
 
     def __init__(self, csv_file, delimiter=','):
